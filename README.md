@@ -1,0 +1,1 @@
+# laravel-dynamic-crud-ajax
