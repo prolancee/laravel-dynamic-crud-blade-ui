@@ -1,0 +1,71 @@
+{
+    "name": "prolancee/dynamic-crud-blade-ui",
+    "description": "An advanced dynamic CRUD package for Laravel built with Blade templates, featuring reusable forms, dynamic tables, search, validation, and pagination.",
+    "type": "library",
+    "license": "MIT",
+
+    "keywords": [
+        "laravel",
+        "laravel-package",
+        "crud",
+        "dynamic-crud",
+        "crud-generator",
+        "blade",
+        "blade-templates",
+        "admin-panel",
+        "admin-dashboard",
+        "data-tables",
+        "form-builder",
+        "pagination",
+        "validation"
+    ],
+
+    "homepage": "https://flux.prolancee.com",
+
+    "authors": [
+        {
+            "name": "Salim Shaikh",
+            "email": "salim.shaikh.dev@gmail.com"
+        }
+    ],
+
+    "support": {
+        "issues": "https://github.com/prolancee/laravel-dynamic-crud-blade-ui/issues",
+        "source": "https://github.com/prolancee/laravel-dynamic-crud-blade-ui",
+        "docs":   "https://flux.prolancee.com/docs/laravel/dynamic-crud-blade-ui/1.0.0"
+    },
+
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/salimbuilds"
+        }
+    ],
+
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^12.0",
+        "prolancee/support": "12.x-dev",
+        "prolancee/dynamic-crud-ajax": "12.x-dev"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "PROLANCEE\\DYNAMIC\\CRUD\\Blade\\Ui\\": "src/"
+        }
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-12.x": "12.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "PROLANCEE\\DYNAMIC\\CRUD\\Blade\\Ui\\Providers\\AppServiceProvider"
+            ]
+        }
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

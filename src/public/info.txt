@@ -1,0 +1,10 @@
+=======================================
+VanillaES6 (Pure Vanilla JavaScript ES6)
+=======================================
+
+This folder contains modular JavaScript function written in
+pure ES6 syntax (without any external framework or library).
+
+Each file is designed to handle a specific responsibility
+for easier maintenance, scalability, and clean separation
+of concerns.

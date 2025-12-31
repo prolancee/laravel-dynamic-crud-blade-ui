@@ -1,0 +1,323 @@
+/* ==============================
+   RESET & GLOBAL CONFIG
+============================== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: repeating-linear-gradient(0deg, #f7f7f9, #f7f7f9 24px, #e5e5e5 25px),
+        repeating-linear-gradient(90deg, #f7f7f9, #f7f7f9 24px, #e5e5e5 25px);
+    color: #333;
+
+    /* No page scrolling */
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollbar UI */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* ==============================
+   HEADER (FIXED)
+============================== */
+header {
+    background: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+header nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+}
+
+header nav a.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    gap: 5px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.icons a:hover {
+    background: #e9ecef;
+}
+
+/* ==============================
+   SCROLLABLE CONTENT AREA
+============================== */
+.content {
+    margin-top: 65px;
+    margin-bottom: 60px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+/* ==============================
+   ERROR BLOCK UI
+============================== */
+.error-container {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.error-box {
+    background: #fff;
+    border-left: 5px solid red;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.error-message {
+    background: #ffecec;
+    border-left: 6px solid #dc3545;
+    padding: 14px;
+    border-radius: 6px;
+    color: #721c24;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.error-message::before {
+    content: "⚠️ ";
+}
+
+/* ==============================
+   STACK + CODE VIEWER AREA
+============================== */
+.trace-container {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.stack-list {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    overflow-y: auto;
+}
+
+.stack-item {
+    padding: 8px;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    transition: 0.2s;
+}
+
+.stack-item:hover {
+    background: #fff5f5;
+    border-left: 5px solid #dc3545;
+}
+
+.stack-item.active {
+    background: #f8d7da;
+    border-left: 5px solid red;
+    font-weight: bold;
+}
+
+.vendor-frames {
+    display: none;
+    padding-left: 10px;
+    font-size: 13px;
+    margin-top: 5px;
+    background: #fafafa;
+    border-left: 3px solid #ccc;
+    border-radius: 4px;
+}
+
+.vendor-frames.show {
+    display: block;
+}
+
+/* CODE VIEWER */
+.code-viewer {
+    flex: 2;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+/* ==============================
+   📌 NEW Professional APP INFORMATION DESIGN
+============================== */
+.app-info {
+    height: 40vh;
+    background: #ffffffdd;
+    border-radius: 10px;
+    padding: 18px;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    overflow-y: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.app-info h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #dcdcdc;
+    color: #222;
+}
+
+/* Section heading (Routing, Context, etc.) */
+.app-info h3 {
+    font-size: 15px;
+    background: #eef3ff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-left: 4px solid #0d6efd;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Table style */
+.app-info table {
+    width: max-content;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.app-info td {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.app-info tr:hover td {
+    background: #e8f1ff;
+}
+
+/* Highlight left data key */
+.app-info td:first-child {
+    background: #fafafa;
+    font-weight: bold;
+}
+
+/* Command / JSON formatting */
+.app-info pre {
+    background: #1e1e1e;
+    color: #e6e6e6;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+}
+
+/* ==============================
+   FOOTER FIXED
+============================== */
+footer {
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    z-index: 999;
+}
+
+footer a {
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+    color: #444;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media(max-width: 768px) {
+    .trace-container {
+        flex-direction: column;
+    }
+
+    .stack-list,
+    .code-viewer {
+        max-height: 200px;
+    }
+}
